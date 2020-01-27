@@ -1,9 +1,9 @@
 # ImmoCRM
-ImmoCRM is a software for German real estate agents. They can manage their customer data (addresses, real estates, orders) with calendar and an income overview.
+ImmoCRM is a software for German real estate agents. The software enables them to manage customer data (addresses, properties, orders) and includes a calendar and an income overview.
 
 The software uses the following Components:
  
-Components with Eclipse Public License - v 2.0 and Eclipse Distribution License v. 1.0
+Components under Eclipse Public License - v 2.0 and Eclipse Distribution License v. 1.0
 
 	EclipseLink 2.7.4
 	https://www.eclipse.org/eclipselink/
@@ -11,7 +11,7 @@ Components with Eclipse Public License - v 2.0 and Eclipse Distribution License 
 	javax.persistence 2.1.0
 
  
-Components with Apache License 2.0:
+Components under Apache License 2.0:
 
 	Apache Derby
 	https://db.apache.org/derby/
@@ -26,5 +26,5 @@ Components with Apache License 2.0:
 	http://poi.apache.org/
 
 	
-The software uses icons made by itim2101 from www.flaticon.com and material design icons from google.
+The software uses icons made by itim2101 from www.flaticon.com and material design icons from Google.
 
