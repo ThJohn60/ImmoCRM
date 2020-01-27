@@ -3,7 +3,7 @@ ImmoCRM is a software with German localization. The software enables them to man
 
 The software uses the following components:
  
-Components under Eclipse Public License - v 2.0 and Eclipse Distribution License v. 1.0
+Components under Eclipse Public License - v 2.0 and Eclipse Distribution License v. 1.0:
 
 	EclipseLink 2.7.4
 	https://www.eclipse.org/eclipselink/
