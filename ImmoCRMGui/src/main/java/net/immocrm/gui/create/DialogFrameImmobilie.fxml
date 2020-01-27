@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:id="dialogPane" prefWidth="800.0" prefHeight="680.0"
+	styleClass="dlg">
+	<header>
+		<Label id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<BorderPane id="contentPane">
+			<left>
+				<VBox id ="steps" alignment="TOP_LEFT" styleClass="steps">
+					<padding>
+						<Insets bottom="0.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+					<children>
+						<Label id="step1" text="1. Objekttyp" styleClass="stepLabel" />
+						<Label id="step2" text="2. Auswahl" styleClass="stepLabel" />
+						<Label id="step3" text="3. Eigentümer" styleClass="stepLabel" />
+						<Label id="step4" text="4. Immobilie" styleClass="stepLabel" />
+						<Label id="step5" text="5. Eigenschaften" styleClass="stepLabel" />
+						<Label id="step6" text="6. Ausstattung" styleClass="stepLabel" />
+						<Label id="step7" text="7. Bilder" styleClass="stepLabel" />
+						<Label id="step8" text="8. Abschluß" styleClass="stepLabel" />
+					</children>
+				</VBox>
+			</left>
+		</BorderPane>
+	</content>
+</DialogPane>

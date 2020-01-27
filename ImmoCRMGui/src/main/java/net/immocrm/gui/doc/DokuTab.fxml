@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Separator?>
+
+<Tab xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" 
+		fx:id="dokuTab" text="Dokumente" styleClass="dlg" fx:controller="net.immocrm.gui.doc.DokuTabController" >
+
+	<BorderPane styleClass="dlg-content">
+		<top>
+			<ToolBar>
+				<padding>
+					<Insets bottom="5.0" left="0.0" right="0.0" top="8.0" />
+				</padding>
+				<items>
+					<Hyperlink mnemonicParsing="false" onAction="#importDoku">
+						<tooltip>
+							<Tooltip text="Dokumente hinzufügen" />
+						</tooltip>
+						<graphic>
+							<ImageView>
+								<image>
+									<Image url="@/rsc/icon/baseline_add_24dp.png" />
+								</image>
+							</ImageView>
+						</graphic>
+					</Hyperlink>
+					<Hyperlink mnemonicParsing="false" onAction="#editDoku">
+						<tooltip>
+							<Tooltip text="Dokumentdaten bearbeiten" />
+						</tooltip>
+						<graphic>
+							<ImageView>
+								<image>
+									<Image url="@/rsc/icon/edit_24dp.png" />
+								</image>
+							</ImageView>
+						</graphic>
+					</Hyperlink>
+					<Hyperlink mnemonicParsing="false" onAction="#openDoku">
+						<tooltip>
+							<Tooltip text="Dokument öffnen" />
+						</tooltip>
+						<graphic>
+							<ImageView>
+								<image>
+									<Image url="@/rsc/icon/arrow_24dp.png" />
+								</image>
+							</ImageView>
+						</graphic>
+					</Hyperlink>
+					<Separator />
+					<Hyperlink mnemonicParsing="false" onAction="#deleteDoku">
+						<tooltip>
+							<Tooltip text="Dokumente löschen" />
+						</tooltip>
+						<graphic>
+							<ImageView>
+								<image>
+									<Image url="@/rsc/icon/delete_24dp.png" />
+								</image>
+							</ImageView>
+						</graphic>
+					</Hyperlink>
+				</items>
+			</ToolBar>
+		</top>
+		<center>
+			<TableView fx:id="dokuTable" onKeyReleased="#keyPressedOnTableItem" onMouseClicked="#mouseClickOnTableItem" >
+				<columns>
+					<TableColumn prefWidth="150.0" text="Titel">
+						<cellValueFactory>
+							<PropertyValueFactory property="title" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn prefWidth="150.0" text="Dateiname" >
+						<cellValueFactory>
+							<PropertyValueFactory property="fileName" />
+						</cellValueFactory>
+					</TableColumn>
+					<TableColumn prefWidth="300.0" text="Bemerkung">
+						<cellValueFactory>
+							<PropertyValueFactory property="details" />
+						</cellValueFactory>
+					</TableColumn>
+				</columns>
+				<contextMenu>
+					<ContextMenu>
+						<items>
+							<MenuItem mnemonicParsing="false" onAction="#editDoku" text="Bearbeiten" >
+								<graphic>
+									<ImageView>
+									    <image>
+									        <Image url="@/rsc/icon/edit_18dp.png"/>
+									    </image>
+									</ImageView>
+								</graphic>
+							</MenuItem>
+							<MenuItem mnemonicParsing="false" onAction="#openDoku" text="Öffnen" >
+								<graphic>
+									<ImageView>
+									    <image>
+									        <Image url="@/rsc/icon/arrow_18dp.png"/>
+									    </image>
+									</ImageView>
+								</graphic>
+							</MenuItem>
+							<SeparatorMenuItem />
+							<MenuItem mnemonicParsing="false" onAction="#deleteDoku" text="Löschen" >
+								<graphic>
+									<ImageView>
+									    <image>
+									        <Image url="@/rsc/icon/delete_18dp.png"/>
+									    </image>
+									</ImageView>
+								</graphic>
+							</MenuItem>
+						</items>
+					</ContextMenu>
+				</contextMenu>
+			</TableView>
+		</center>
+	</BorderPane>
+
+</Tab>

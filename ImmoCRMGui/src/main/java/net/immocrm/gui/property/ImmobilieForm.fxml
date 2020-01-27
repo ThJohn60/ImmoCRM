@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import net.immocrm.gui.control.CountryComboBox?>
+<?import net.immocrm.gui.control.MerkmalTypeComboBox?>
+<?import net.immocrm.gui.control.AreaField?>
+<?import net.immocrm.gui.control.NumberField?>
+
+<Tab text="Lage" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.ImmobilieFormController" styleClass="dlg-content" >
+	<content>
+		<BorderPane >
+			<padding>
+				<Insets bottom="0.0" left="8.0" right="8.0" top="0.0" />
+			</padding>
+			<top>
+				<VBox >
+					<children>
+						<Label text="Typ" styleClass="formheadertop" />
+						<Group>
+							<children>
+								<GridPane hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="170.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="60.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="95.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="60.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="95.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<MerkmalTypeComboBox fx:id="propertyType" GridPane.columnIndex="0" />
+										<Label text="Wohnfläche:" GridPane.columnIndex="1" styleClass="lbl" />
+										<AreaField fx:id="wohnflaeche" GridPane.columnIndex="2" alignment="BASELINE_RIGHT" fieldName="Wohnfläche" />
+										<Label text="Anz. Zimmer:" GridPane.columnIndex="3" styleClass="lbl" />
+										<NumberField fx:id="roomCnt" GridPane.columnIndex="4" alignment="BASELINE_RIGHT" fieldName="Anz. Zimmer" />
+										<Label text="Wohneinheit:" GridPane.columnIndex="5" styleClass="lbl" />
+										<TextField fx:id="wohneinheit" GridPane.columnIndex="6" />
+									</children>
+								</GridPane>
+							</children>
+						</Group>
+						<HBox >
+							<children>
+								<Label text="Adresse" styleClass="formheader" alignment="BASELINE_LEFT" prefWidth="340.0"/>
+								<Label text="Eigentümer" styleClass="formheader" />
+							</children>
+						</HBox>
+						<HBox >
+							<children>
+								<Group>
+									<children>
+										<GridPane >
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="70.0" prefWidth="60.0" halignment="RIGHT" fillWidth="false" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="220.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Label text="Straße:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+												<TextField fx:id="street" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+												<TextField fx:id="streetb" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+												<Label text="PLZ:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+												<TextField fx:id="postalCode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+												<Label text="Ort:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+												<TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+												<Label text="Land:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="lbl" />
+												<CountryComboBox fx:id="countryBox" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="220.0"  />
+											</children>
+										</GridPane>
+									</children>
+								</Group>
+								<Group>
+									<children>
+										<GridPane >
+											<padding>
+												<Insets left="50">
+												</Insets>
+											</padding>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="300.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Label fx:id="customerName" GridPane.rowIndex="0" styleClass="content" />
+												<Label fx:id="customerStreet" GridPane.rowIndex="1" styleClass="content" />
+												<Label fx:id="customerCity" GridPane.rowIndex="2" styleClass="content" />
+											</children>
+										</GridPane>
+									</children>
+								</Group>
+							</children>
+						</HBox>
+						<HBox >
+							<children>
+								<FlowPane prefWidth="340.0" >
+									<children>
+										<Hyperlink mnemonicParsing="false" onAction="#selectAddress" >
+											<tooltip>
+												<Tooltip text="Adresse kopieren" />
+											</tooltip>
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/ic_reorder_24dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+								<FlowPane fx:id="ownerHyperlinkPane" hgap="5" prefWidth="300.0" >
+									<children>
+										<Hyperlink fx:id="lnkSelectCustomer" mnemonicParsing="false" onAction="#selectCustomer">
+											<tooltip>
+												<Tooltip text="Eigentümer auswählen" />
+											</tooltip>
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/ic_reorder_24dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+										<Hyperlink fx:id="lnkEditCustomer" mnemonicParsing="false" onAction="#editCustomer">
+											<tooltip>
+												<Tooltip text="Eigentümerdaten ändern" />
+											</tooltip>
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/icon/edit_24dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+							</children>
+						</HBox>
+						<Label text="Lagebeschreibung" styleClass="formheader" />
+					</children>
+				</VBox>
+			</top>
+			<center>
+				<TextArea fx:id="lagebeschreibung" promptText="Lagebeschreibung eingeben" >
+				</TextArea>
+			</center>
+		</BorderPane>
+	</content>
+</Tab>

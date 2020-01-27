@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.create.OrderForkController" styleClass="dlg-content">
+	<center>
+		<Group>
+			<children>
+				<GridPane hgap="0" vgap="3" alignment="CENTER_LEFT">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="400.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<fx:define>
+						<ToggleGroup fx:id="typeToggle" />
+					</fx:define>
+					<children>
+						<RadioButton fx:id="immoExists" GridPane.columnIndex="0" GridPane.rowIndex="0" text="Immobilie ist im System vorhanden" toggleGroup="$typeToggle" >
+							<tooltip>
+								<Tooltip text="Die Immobilien- und Auftraggeberdaten müssen in diesem Fall nicht erfasst werden." />
+							</tooltip>
+						</RadioButton>
+						<RadioButton fx:id="customerExists" GridPane.columnIndex="0" GridPane.rowIndex="1" text="Auftraggeber aber nicht die Immobilie ist im System vorhanden" toggleGroup="$typeToggle" >
+							<tooltip>
+								<Tooltip text="Die Auftraggeberdaten müssen in diesem Fall nicht erfasst werden." />
+							</tooltip>
+						</RadioButton>
+						<RadioButton fx:id="nothingExists" GridPane.columnIndex="0" GridPane.rowIndex="2" text="Auftraggeber und Immobilie müssen erfasst werden" toggleGroup="$typeToggle" selected="true">
+							<tooltip>
+								<Tooltip text="Sämtliche Daten werden in den folgenden Dialogen erfasst." />
+							</tooltip>
+						</RadioButton>
+					</children>
+				</GridPane>
+			</children>
+		</Group>
+	</center>
+</BorderPane>

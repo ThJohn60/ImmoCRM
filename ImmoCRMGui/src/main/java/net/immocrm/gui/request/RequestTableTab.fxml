@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Tab text="Anfragen" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.request.RequestTabController"
+	styleClass="dlg-content">
+	<graphic>
+		<ImageView>
+			<image>
+				<Image url="@/rsc/icon/phone_18dp.png" />
+			</image>
+		</ImageView>
+	</graphic>
+	<content>
+		<BorderPane>
+			<top>
+				<ToolBar>
+					<padding>
+						<Insets bottom="5.0" left="0.0" right="0.0" top="10.0" />
+					</padding>
+					<items>
+						<Hyperlink mnemonicParsing="false" onAction="#newRequest">
+							<tooltip>
+								<Tooltip text="Neue Anfrage hinzufügen" />
+							</tooltip>
+							<graphic>
+								<ImageView>
+									<image>
+										<Image url="@/rsc/icon/add_request_24dp.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Hyperlink>
+						<Hyperlink mnemonicParsing="false" onAction="#editRequest">
+							<tooltip>
+								<Tooltip text="Anfrage ändern" />
+							</tooltip>
+							<graphic>
+								<ImageView>
+									<image>
+										<Image url="@/rsc/icon/edit_24dp.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Hyperlink>
+						<Hyperlink mnemonicParsing="false" onAction="#deleteRequest">
+							<tooltip>
+								<Tooltip text="Anfrage entfernen" />
+							</tooltip>
+							<graphic>
+								<ImageView>
+									<image>
+										<Image url="@/rsc/icon/delete_24dp.png" />
+									</image>
+								</ImageView>
+							</graphic>
+						</Hyperlink>
+					</items>
+				</ToolBar>
+			</top>
+			<center>
+				<TableView fx:id="requestTable" onKeyReleased="#keyPressedOnRequestItem" onMouseClicked="#mouseClickOnRequestItem">
+					<columns>
+						<TableColumn prefWidth="120.0" text="Interessent">
+							<cellValueFactory>
+								<PropertyValueFactory property="name" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="240.0" text="Adresse">
+							<cellValueFactory>
+								<PropertyValueFactory property="address" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="100.0" text="Preis" id="rightAlignmentColumn" >
+							<cellValueFactory>
+								<PropertyValueFactory property="price" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="140.0" text="Besichtigungstermin">
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+					<contextMenu>
+						<ContextMenu>
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#newRequest" text="Neue Anfrage...">
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/add_request_18dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#editRequest" text="Bearbeiten...">
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/edit_18dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<SeparatorMenuItem mnemonicParsing="false" />
+								<MenuItem mnemonicParsing="false" onAction="#deleteRequest" text="Löschen...">
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/delete_24dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+							</items>
+						</ContextMenu>
+					</contextMenu>
+				</TableView>
+			</center>
+		</BorderPane>
+	</content>
+</Tab>
+

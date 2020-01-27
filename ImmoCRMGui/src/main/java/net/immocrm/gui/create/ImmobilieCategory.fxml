@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.create.ImmobilieCategoryController" styleClass="dlg-content">
+	<center>
+		<Group>
+			<children>
+				<GridPane hgap="0" vgap="3" alignment="CENTER_LEFT">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="300.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<fx:define>
+						<ToggleGroup fx:id="typeToggle" />
+					</fx:define>
+					<children>
+						<RadioButton fx:id="flat" text="Wohnung" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<RadioButton fx:id="house" text="Haus" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+						<RadioButton fx:id="business" text="Gewerbe" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+						<RadioButton fx:id="ground" text="Grundstück" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+						<RadioButton fx:id="garage" text="Garage/Stellpatz" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+						<RadioButton fx:id="other" text="Sonstiges" toggleGroup="$typeToggle" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+					</children>
+				</GridPane>
+			</children>
+		</Group>
+	</center>
+</BorderPane>

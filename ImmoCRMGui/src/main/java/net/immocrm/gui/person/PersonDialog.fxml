@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" styleClass="dlg" fx:controller="net.immocrm.gui.person.PersonDialogController" >
+	<header>
+		<Label id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<TabPane tabClosingPolicy="UNAVAILABLE" fx:id="tabPane" >
+		</TabPane>
+	</content>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/person_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</DialogPane>

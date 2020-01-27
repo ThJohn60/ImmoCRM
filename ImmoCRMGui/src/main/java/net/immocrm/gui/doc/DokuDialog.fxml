@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<?import net.immocrm.gui.control.TerminCategoryComboBox?>
+<?import net.immocrm.gui.control.DateTimePicker?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.doc.DokuDialogController" fx:id="dialogPane" styleClass="dlg" >
+	<header>
+		<Label fx:id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<BorderPane >
+			<left>
+				<Group>
+					<children>
+						<GridPane hgap="0" vgap="1">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="240.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" valignment="BASELINE" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" valignment="BASELINE" />
+								<RowConstraints prefHeight="180.0" vgrow="SOMETIMES" valignment="BASELINE" />
+							</rowConstraints>
+							<children>
+								<Label text="Titel:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+								<TextField fx:id="title" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" />
+								<Label text="Dateiname:" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="220" alignment="BASELINE_LEFT" styleClass="lbl" />
+								<BorderPane GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="240.0" >
+									<center>
+										<Label fx:id="fileName" styleClass="content" alignment="BASELINE_LEFT" prefWidth="200.0"/>
+									</center>
+									<right>
+										<Button text="..." onAction="#changeFile" />
+									</right>
+								</BorderPane>
+								<Label text="Bemerkung:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+								<TextArea fx:id="details" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+			</left>
+			<center>
+				<VBox  >
+					<padding>
+						<Insets bottom="0" top="0" left="10" right="10" />
+					</padding>
+					<children>
+						<ImageView fx:id="imageArea" fitWidth="300.0"  smooth="true" onMouseClicked="#mouseClickedOnImage"/>
+					</children>
+				</VBox>
+			</center>
+		</BorderPane>
+	</content>
+</DialogPane>

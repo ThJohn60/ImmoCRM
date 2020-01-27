@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ScrollPane?>
+
+
+<Tab fx:id="orderTab" text="Auftrag" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.OrderDetailController" 
+	 styleClass="dlg-content">
+	<content>
+		<ScrollPane fx:id="scrollPane" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER" fitToWidth="true" >
+			<padding>
+				<Insets bottom="0.0" left="16.0" right="16.0" top="0.0" />
+			</padding>
+			<content>
+				<VBox >
+					<children>
+						<FlowPane >
+							<padding>
+								<Insets bottom="5.0" left="5.0" right="0.0" top="5.0" />
+							</padding>
+							<children>
+								<ImageView fx:id="detailViewIcon" >
+								</ImageView>
+								<Region prefWidth="20.0" />
+								<Label fx:id="headLine" text="headLine" styleClass="detailheader" alignment="CENTER_LEFT" />
+							</children>
+						</FlowPane>
+
+						<HBox >
+							<children>
+								<VBox prefWidth="240.0" >
+									<children>
+										<Label text="Auftrag" styleClass="formheadertop" />
+										<Group>
+											<children>
+												<GridPane>
+													<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" prefWidth="70.0" halignment="RIGHT" fillWidth="false"/>
+												<ColumnConstraints hgrow="SOMETIMES" prefWidth="170.0"  />
+													</columnConstraints>
+													<rowConstraints>
+														<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+														<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+														<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+														<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+													</rowConstraints>
+													<children>
+														<Label text="Ablage:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+														<Label fx:id="ablage" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" />
+														<Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+														<Label fx:id="orderState" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" />
+														<Label text="Feld1:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+														<Label fx:id="field1" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" />
+														<Label text="Feld2:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+														<Label fx:id="field2" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content" />
+													</children>
+												</GridPane>
+											</children>
+										</Group>
+									</children>
+								</VBox>
+								<VBox prefWidth="220.0" >
+									<children>
+										<Label fx:id="customerLabel" text="Verkäufer" styleClass="formheadertop" />
+										<Label fx:id="ownerName" styleClass="content" />
+										<Label fx:id="ownerStreet" styleClass="content" />
+										<Label fx:id="ownerCity" styleClass="content" />
+									</children>
+								</VBox>
+								
+								<VBox prefWidth="240.0" >
+									<children>
+										<Label fx:id="immoType" text="Objekt" styleClass="formheadertop" />
+										<Label fx:id="street" styleClass="content" />
+										<Label fx:id="city" styleClass="content" />
+										<Label fx:id="wohnflaeche" styleClass="content" />
+										<Label fx:id="roomcnt" styleClass="content" />
+									</children>
+								</VBox>
+							</children>
+						</HBox>
+
+						<HBox >
+							<children>
+								<FlowPane prefWidth="240.0" >
+									<children>
+										<Hyperlink mnemonicParsing="false" onAction="#editOrder" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Auftragsdaten bearbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+								<FlowPane prefWidth="220.0" >
+									<children>
+										<Hyperlink mnemonicParsing="false" onAction="#editCustomer" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Daten des Kunden bearbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+										<Hyperlink mnemonicParsing="false" onAction="#gotoCustomer" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Daten des Kunden anzeigen"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/arrow_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+										<Hyperlink mnemonicParsing="false" onAction="#showCustomerAddressInMap" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Kundenadresse in Google Maps anzeigen"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/map_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+								<FlowPane prefWidth="240.0" >
+									<children>
+										<Hyperlink mnemonicParsing="false" onAction="#editImmobilie" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Immobiliendaten berbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+										<Hyperlink mnemonicParsing="false" onAction="#gotoImmobilien" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Daten der Immobilien anzeigen"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/arrow_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+										<Hyperlink mnemonicParsing="false" onAction="#showOrderAddressInMap" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Immobilienadresse in Google Maps anzeigen"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/map_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+							</children>
+						</HBox>
+
+						<FlowPane >
+							<children>
+								<VBox prefWidth="240.0" >
+									<children>
+										<Label text="Termine" styleClass="formheader" />
+										<GridPane>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES" prefWidth="70.0" halignment="RIGHT" fillWidth="false"/>
+												<ColumnConstraints hgrow="SOMETIMES" prefWidth="170.0"  />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Label text="Notar:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+												<Label fx:id="notarTermin" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" />
+												<Label text="Übergabe:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+												<Label fx:id="handoverTermin" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" />
+												<Label text="Rechnung:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+												<Label fx:id="billTermin" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" />
+												<Label text="Bezahlt:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+												<Label fx:id="payedTermin" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content" />
+											</children>
+										</GridPane>
+										<Hyperlink mnemonicParsing="false" onAction="#editOrder" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Termine bearbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</VBox>
+
+								<VBox prefWidth="220.0" >
+									<children>
+										<Label fx:id="buyerLabel" text="Käufer" styleClass="formheader" />
+										<Label fx:id="buyerName" prefHeight="16.0" styleClass="content" />
+										<Label fx:id="buyerStreet" prefHeight="16.0" styleClass="content" />
+										<Label fx:id="buyerCity" prefHeight="16.0" styleClass="content" />
+										<FlowPane >
+											<padding>
+												<Insets bottom="0.0" left="0.0" right="0.0" top="10.0" />
+											</padding>
+											<children>
+												<Hyperlink mnemonicParsing="false" onAction="#editBuyer" styleClass="hyperlink-in-dialog" >
+													<tooltip>
+														<Tooltip text="Daten des Käufers/Mieters bearbeiten"/>
+													</tooltip>
+													<graphic>
+														<ImageView>
+														    <image>
+														        <Image url="@/rsc/icon/edit_24dp.png"/>
+														    </image>
+														</ImageView>
+													</graphic>
+												</Hyperlink>
+												<Hyperlink mnemonicParsing="false" onAction="#gotoPurchaser" styleClass="hyperlink-in-dialog" >
+													<tooltip>
+														<Tooltip text="Daten des Käufers anzeigen"/>
+													</tooltip>
+													<graphic>
+														<ImageView>
+														    <image>
+														        <Image url="@/rsc/icon/arrow_24dp.png"/>
+														    </image>
+														</ImageView>
+													</graphic>
+												</Hyperlink>
+												<Hyperlink mnemonicParsing="false" onAction="#showPurchaserAddressInMap" styleClass="hyperlink-in-dialog" >
+													<tooltip>
+														<Tooltip text="Adresse des Eigentümers in Google Maps anzeigen"/>
+													</tooltip>
+													<graphic>
+														<ImageView>
+														    <image>
+														        <Image url="@/rsc/icon/map_24dp.png"/>
+														    </image>
+														</ImageView>
+													</graphic>
+												</Hyperlink>
+											</children>
+										</FlowPane>
+									</children>
+								</VBox>
+
+								<VBox prefWidth="240.0" >
+									<children>
+										<Label text="Finanzen" styleClass="formheader" />
+										<GridPane>
+											<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="85.0" halignment="RIGHT" fillWidth="false"/>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="155"  />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+												<RowConstraints prefHeight="16.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Label fx:id="desiredPriceLabel" text="Wunschpreis:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+												<Label fx:id="desiredPrice" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" prefWidth="80" alignment="BASELINE_RIGHT" />
+												<Label fx:id="realPriceLabel" text="Realer Preis:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+												<Label fx:id="realPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" prefWidth="80" alignment="BASELINE_RIGHT" />
+												<Label fx:id="priceLabel" text="Verkaufspreis:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+												<Label fx:id="price" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" prefWidth="80" alignment="BASELINE_RIGHT" />
+												<Label text="Provision:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+												<Label fx:id="provision" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content" prefWidth="80" alignment="BASELINE_RIGHT" />
+												<Label fx:id="notarLabel" text="Notar:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="lbl" />
+												<Label fx:id="notarName" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="content" />
+												<Label fx:id="notarCity" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="content" />
+											</children>
+										</GridPane>
+									</children>
+								</VBox>
+							</children>
+						</FlowPane>
+
+						<Label text="Bilder" styleClass="formheader" />
+						<AnchorPane fx:id="imageArea" prefHeight="400" prefWidth="400" maxWidth="600" styleClass="image-field" />
+
+						<FlowPane>
+							<children>
+								<Hyperlink mnemonicParsing="false" onAction="#importImage" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Bilder importieren" />
+									</tooltip>
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/add_a_photo_24dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#deleteImage" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Bilder löschen" />
+									</tooltip>
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/delete_24dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+							</children>
+						</FlowPane>
+						
+						<Label text="Anfragen" styleClass="formheader" />
+						<TableView fx:id="requestTable" prefHeight="120.0" maxWidth="705" onMouseClicked="#requestTableKlicked"  >
+							<columns>
+								<TableColumn prefWidth="160.0" text="Name"  >
+									<cellValueFactory>
+										<PropertyValueFactory property="name" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="300.0" text="Adresse">
+									<cellValueFactory>
+										<PropertyValueFactory property="address" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="100.0" text="Preis" >
+									<cellValueFactory>
+										<PropertyValueFactory property="price" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="140.0" text="Besichtigungstermin">
+									<cellValueFactory>
+										<PropertyValueFactory property="date" />
+									</cellValueFactory>
+								</TableColumn>
+							</columns>
+							<contextMenu>
+								<ContextMenu>
+									<items>
+										<MenuItem mnemonicParsing="false" onAction="#newRequest" text="Neue Anfrage...">
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/icon/add_request_18dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</MenuItem>
+										<MenuItem mnemonicParsing="false" onAction="#editRequest" text="Bearbeiten...">
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/icon/edit_18dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</MenuItem>
+										<MenuItem mnemonicParsing="false" onAction="#gotoRequestPerson" text="Person anzeigen">
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/icon/arrow_18dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</MenuItem>
+										<SeparatorMenuItem mnemonicParsing="false" />
+										<MenuItem mnemonicParsing="false" onAction="#deleteRequest" text="Löschen...">
+											<graphic>
+												<ImageView>
+													<image>
+														<Image url="@/rsc/icon/delete_18dp.png" />
+													</image>
+												</ImageView>
+											</graphic>
+										</MenuItem>
+									</items>
+								</ContextMenu>
+							</contextMenu>
+						</TableView>
+						<FlowPane >
+							<padding>
+								<Insets bottom="0.0" left="0.0" right="0.0" top="10.0" />
+							</padding>
+							<children>
+								<Hyperlink mnemonicParsing="false" onAction="#newRequest" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Neue Anfrage erfassen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/add_request_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#editRequest" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Anfrage ändern" />
+									</tooltip>
+									<graphic>
+										<ImageView>
+											<image>
+												<Image url="@/rsc/icon/edit_24dp.png" />
+											</image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#deleteRequest" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Ausgewählte Anfrage löschen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/delete_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+							</children>
+						</FlowPane>
+
+						<HBox >
+							<children>
+								<VBox prefWidth="320.0" >
+									<children>
+										<Label text="Eigenschaften" styleClass="formheader" />
+										<GridPane fx:id="eigenschaftenBox" id="eigenschaften" vgap="1">
+											<columnConstraints>
+												<ColumnConstraints hgrow="NEVER" minWidth="60.0" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+										</GridPane>
+									</children>
+								</VBox>
+								<VBox >
+									<children>
+										<Label text="Ausstattung" styleClass="formheader" />
+										<GridPane fx:id="ausstatungBox" id="ausstattungFields" vgap="1">
+											<columnConstraints>
+												<ColumnConstraints hgrow="NEVER" minWidth="80.0" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+												<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="400.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+										</GridPane>
+										<FlowPane>
+											<children>
+												<Label text="" styleClass="content" prefWidth="100.0"  />
+												<Label fx:id="ausstattung" styleClass="content" />
+											</children>
+										</FlowPane>
+									</children>
+								</VBox>
+							</children>
+						</HBox>
+						<HBox >
+							<children>
+								<FlowPane prefWidth="320.0" >
+									<children>
+										<Label text="" />
+										<Hyperlink mnemonicParsing="false" onAction="#editEigenschaften" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Eigenschaften bearbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+								<FlowPane>
+									<children>
+										<Hyperlink mnemonicParsing="false" onAction="#editAustattung" styleClass="hyperlink-in-dialog" >
+											<tooltip>
+												<Tooltip text="Ausstattung bearbeiten"/>
+											</tooltip>
+											<graphic>
+												<ImageView>
+												    <image>
+												        <Image url="@/rsc/icon/edit_24dp.png"/>
+												    </image>
+												</ImageView>
+											</graphic>
+										</Hyperlink>
+									</children>
+								</FlowPane>
+							</children>
+						</HBox>
+						<Region prefHeight="20" />
+						<Label fx:id="objektbeschreibungLabel"  text="Objektbeschreibung" styleClass="formheader2" />
+						<Label fx:id="objektbeschreibung" styleClass="content" />
+						<Label fx:id="lagebeschreibungLabel" text="Lagebeschreibung" styleClass="formheader2" />
+						<Label fx:id="lagebeschreibung" styleClass="content" />
+						<Label fx:id="internalNoticeLabel" text="Interne Notizen" styleClass="formheader2" />
+						<Label fx:id="notice" styleClass="content" />
+
+						<FlowPane>
+							<children>
+								<Hyperlink mnemonicParsing="false" prefHeight="40.0" onAction="#editNotice" styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Notiz eingeben"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/edit_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+							</children>
+						</FlowPane>
+						<Label text="Änderungshistorie" styleClass="formheader" />
+						<TableView fx:id="historyTable" prefHeight="360.0" prefWidth="545" maxWidth="600"  >
+							<columns>
+								<TableColumn prefWidth="120.0" text="Datum">
+									<cellValueFactory>
+										<PropertyValueFactory property="date" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="220.0" text="Ereignis">
+									<cellValueFactory>
+										<PropertyValueFactory property="description" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="100.0" text="Vorher">
+									<cellValueFactory>
+										<PropertyValueFactory property="oldValue" />
+									</cellValueFactory>
+								</TableColumn>
+								<TableColumn prefWidth="100.0" text="Nachher">
+									<cellValueFactory>
+										<PropertyValueFactory property="newValue" />
+									</cellValueFactory>
+								</TableColumn>
+							</columns>
+						</TableView>
+						<Region prefHeight="50" />
+		 			</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</content>
+</Tab>

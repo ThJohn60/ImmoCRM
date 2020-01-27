@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.request.RequestDialogController" styleClass="dlg" >
+	<header>
+		<Label id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+		</TabPane>
+	</content>
+</DialogPane>

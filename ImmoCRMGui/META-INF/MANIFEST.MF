@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Built-By: TJ
+Build-Jdk: 1.8.0_201
+Main-Class: net.immocrm.gui.Main

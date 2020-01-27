@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+				xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="ImmoCRMDerbyDB">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>net.immocrm.db.AddressEntity</class>
+		<class>net.immocrm.db.ContactEntity</class>
+		<class>net.immocrm.db.GeoInfoEntity</class>
+		<class>net.immocrm.db.ImmobilieEntity</class>
+		<class>net.immocrm.db.ImmobilieTransactionEntity</class>
+		<class>net.immocrm.db.MerkmalEntity</class>
+		<class>net.immocrm.db.MerkmalTypeEntity</class>
+		<class>net.immocrm.db.NotarEntity</class>
+		<class>net.immocrm.db.NoticeEntity</class>
+		<class>net.immocrm.db.OrderEntity</class>
+		<class>net.immocrm.db.OrderHistoryEntity</class>
+		<class>net.immocrm.db.PersonEntity</class>
+		<class>net.immocrm.db.PreferencesEntity</class>
+		<class>net.immocrm.db.RequestEntity</class>
+		<class>net.immocrm.db.tools.DateConverter</class>
+		<class>net.immocrm.db.tools.LocaleConverter</class>
+		<class>net.immocrm.db.DocumentEntity</class>
+		<class>net.immocrm.db.TerminEntity</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<shared-cache-mode>NONE</shared-cache-mode>
+		<properties>
+			<property name="eclipselink.logging.level" value="SEVERE"/>
+			<property name="eclipselink.logging.thread" value="false"/>
+			<property name="eclipselink.logging.session" value="false"/>
+		</properties>
+	</persistence-unit>
+</persistence>

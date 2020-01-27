@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<MenuItem xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.refresh.DomainFilterController" 
+		mnemonicParsing="false" onAction="#refreshAll" text="Aktualisieren" accelerator="F5" >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_refresh_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>

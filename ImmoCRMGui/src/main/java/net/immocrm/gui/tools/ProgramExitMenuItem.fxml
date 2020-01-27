@@ -1,0 +1,16 @@
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<MenuItem xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.tools.ExitController"
+		mnemonicParsing="false"	onAction="#exitProgram" text="Beenden"  accelerator="Alt+F4">
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/power_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>

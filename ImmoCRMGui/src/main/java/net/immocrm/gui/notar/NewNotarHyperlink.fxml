@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.notar.NewNotarController"
+		 mnemonicParsing="false" onAction="#newNotar" >
+	<tooltip>
+		<Tooltip text="Neuer Notar erfassen" />
+	</tooltip>
+	<graphic>
+		<ImageView>
+			<image>
+				<Image url="@/rsc/icon/baseline_add_24dp.png" />
+			</image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

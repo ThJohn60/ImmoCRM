@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.tools.ClipboardController"
+		mnemonicParsing="false"	onAction="#copyToClipboard" text="Kopieren" accelerator="Ctrl+C" >
+	<tooltip>
+		<Tooltip text="In die Zwischenablage kopieren"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_content_copy_24dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

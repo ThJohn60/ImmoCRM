@@ -1,0 +1,16 @@
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<MenuItem xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.tools.ClipboardController"
+		mnemonicParsing="false"	onAction="#copyToClipboard" text="Kopieren" accelerator="Ctrl+C"  >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_content_copy_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import net.immocrm.gui.control.PercentField?>
+<?import net.immocrm.gui.control.PriceField?>
+
+<Tab text="Finanzen"  xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.SaleFinanceFormController" >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_euro_symbol_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+	<content>
+		<VBox alignment="TOP_LEFT" styleClass="dlg-content">
+			<children>
+				<Label text="Provision" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="formheadertop" />
+				<Group>
+					<children>
+						<GridPane hgap="0" vgap="3">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="150.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="180.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="Verkäuferprovision:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+								<PercentField fx:id="customerProvision" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" alignment="BASELINE_RIGHT" fieldName="Verkäuferprovision" />
+								<Label text="Käuferprovision:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="lbl" />
+								<PercentField fx:id="buyerProvision" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="content" alignment="BASELINE_RIGHT" fieldName="Käuferprovision" />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+				<Region prefHeight="20.0" />
+				<Label text="Berechnungen" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="formheader" />
+				<Group>
+					<children>
+						<GridPane hgap="0" vgap="3">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="150.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="10.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="10.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints prefHeight="20.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="Gesamtpreis" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="lbl" />
+								<Label text="pro &#x33a1;" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="lbl" />
+								<Label text="Provision" GridPane.columnIndex="5" GridPane.rowIndex="0" styleClass="lbl" />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+				<Group>
+					<children>
+						<GridPane hgap="0" vgap="3">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="150.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="10.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="10.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="32.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="gewünscht:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+								<PriceField fx:id="customerPrice" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="content" alignment="BASELINE_RIGHT" fieldName="Gewünschter Preis"/>
+								<Label fx:id="customerPricePerSquareMeter" GridPane.columnIndex="3" GridPane.rowIndex="0"  styleClass="content"/>
+								<Label fx:id="customerPriceIncome" GridPane.columnIndex="5" GridPane.rowIndex="0" styleClass="content"/>
+								<Label text="realistisch:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+								<PriceField fx:id="estimatedPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" alignment="BASELINE_RIGHT" fieldName="Realistischer Preis" />
+								<Label fx:id="estimatedPricePerSquareMeter" GridPane.columnIndex="3" GridPane.rowIndex="1"  styleClass="content"/>
+								<Label fx:id="estimatedPriceIncome" GridPane.columnIndex="5" GridPane.rowIndex="1" styleClass="content"/>
+								<Label text="tatsächlich:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+								<PriceField fx:id="settlementPrice" GridPane.columnIndex="1" GridPane.rowIndex="2"  styleClass="content" alignment="BASELINE_RIGHT" fieldName="Tatsächlicher Preis"/>
+								<Label fx:id="settlementPricePerSquareMeter" GridPane.columnIndex="3" GridPane.rowIndex="2"  styleClass="content"/>
+								<Label fx:id="settlementPriceIncome" GridPane.columnIndex="5" GridPane.rowIndex="2" styleClass="content"/>
+								<Hyperlink GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#refreshCalculation"  styleClass="hyperlink-in-dialog" >
+									<tooltip>
+										<Tooltip text="Neu berechnen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/ic_refresh_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+			</children>
+		</VBox>
+	</content>
+</Tab>
+

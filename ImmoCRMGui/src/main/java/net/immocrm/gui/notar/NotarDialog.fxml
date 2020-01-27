@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import net.immocrm.gui.control.CountryComboBox?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.notar.NotarDialogController" fx:id="dialogPane" styleClass="dlg" >	
+	<header>
+		<Label id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<GridPane>
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" fillWidth="true" halignment="RIGHT"/>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="20.0" prefWidth="40.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" halignment="RIGHT"/>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="200.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label text="Name:" GridPane.columnIndex="0" styleClass="lbl" />
+				<TextField fx:id="name" GridPane.columnIndex="1" />
+				<Label text="Straße:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+				<TextField fx:id="street" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="PLZ:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+				<TextField fx:id="postalCode" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<Label text="Ort:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+				<TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+				<Label text="Land:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="lbl" />
+				<CountryComboBox fx:id="countryBox" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="200.0"  />
+
+				<Label text="Telefon:" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="lbl" />
+				<TextField fx:id="telefon" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+				<Label text="Fax:" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="lbl" />
+				<TextField fx:id="fax" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+				<Label text="E-Mail:" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="lbl" />
+				<TextField fx:id="email" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+			</children>
+		</GridPane>
+	</content>
+</DialogPane>

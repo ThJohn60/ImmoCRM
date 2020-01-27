@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.img.ImageViewController"
+	styleClass="dlg-content">
+	<top>
+		<ToolBar>
+			<padding>
+				<Insets bottom="5.0" left="0.0" right="0.0" top="8.0" />
+			</padding>
+			<items>
+				<Hyperlink mnemonicParsing="false" onAction="#importImage">
+					<tooltip>
+						<Tooltip text="Bilder importieren" />
+					</tooltip>
+					<graphic>
+						<ImageView>
+							<image>
+								<Image url="@/rsc/icon/add_a_photo_24dp.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+				<Hyperlink mnemonicParsing="false" onAction="#deleteImage">
+					<tooltip>
+						<Tooltip text="Bilder löschen" />
+					</tooltip>
+					<graphic>
+						<ImageView>
+							<image>
+								<Image url="@/rsc/icon/delete_24dp.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+			</items>
+		</ToolBar>
+	</top>
+	<center>
+		<AnchorPane fx:id="imageArea" />
+	</center>
+</BorderPane>

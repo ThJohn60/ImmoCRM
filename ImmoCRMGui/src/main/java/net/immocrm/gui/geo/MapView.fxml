@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<Tab xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.geo.MapViewController" id="mapTab"
+	text="Karte" closable="true">
+	<content>
+		<BorderPane id="browserPane" prefHeight="599.0" prefWidth="976.0">
+			<BorderPane.margin>
+				<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+			</BorderPane.margin>
+			<center>
+				<WebView fx:id="browserView">
+				</WebView>
+			</center>
+		</BorderPane>
+	</content>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/map_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Tab>
