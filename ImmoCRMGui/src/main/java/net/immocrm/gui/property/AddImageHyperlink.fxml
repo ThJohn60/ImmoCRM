@@ -1,0 +1,19 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.AddImagesController"
+		 mnemonicParsing="false" onAction="#addImages" >
+	<tooltip>
+		<Tooltip text="Bilder zur Immobilie hinzufügen"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/add_a_photo_24dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

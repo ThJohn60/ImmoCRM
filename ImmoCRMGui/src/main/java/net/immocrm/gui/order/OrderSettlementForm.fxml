@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import net.immocrm.gui.control.DateTimePicker?>
+<?import net.immocrm.gui.control.PriceField?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.OrderSettlementController" alignment="TOP_LEFT">
+	<children>
+		<HBox>
+			<children>
+				<VBox prefWidth="180.0" >
+					<children>
+						<Label text="Verkäufer" styleClass="formheadertop" />
+						<Label fx:id="ownerName" styleClass="content" />
+						<Label fx:id="ownerStreet" styleClass="content" />
+						<Label fx:id="ownerCity" styleClass="content" />
+					</children>
+				</VBox>
+
+				<VBox prefWidth="180.0" >
+					<children>
+						<Label text="Käufer" prefWidth="180.0" styleClass="formheadertop" />
+						<Label fx:id="purchaserName" styleClass="content" />
+						<Label fx:id="purchaserStreet" styleClass="content" />
+						<Label fx:id="purchaserCity" styleClass="content" />
+						<FlowPane hgap="5">
+							<Hyperlink id="selectPurchaser" mnemonicParsing="false" onAction="#selectPurchaser">
+								<tooltip>
+									<Tooltip text="Käufer auswählen" />
+								</tooltip>
+								<graphic>
+									<ImageView>
+										<image>
+											<Image url="@/rsc/ic_reorder_24dp.png" />
+										</image>
+									</ImageView>
+								</graphic>
+							</Hyperlink>
+							<Hyperlink mnemonicParsing="false" onAction="#selectRequest">
+								<tooltip>
+									<Tooltip text="Anfrage auswählen" />
+								</tooltip>
+								<graphic>
+									<ImageView>
+										<image>
+											<Image url="@/rsc/icon/phone_24dp.png" />
+										</image>
+									</ImageView>
+								</graphic>
+							</Hyperlink>
+						</FlowPane>
+					</children>
+				</VBox>
+
+				<VBox prefWidth="180.0" >
+					<children>
+						<Label text="Notar" prefWidth="180.0" styleClass="formheadertop" />
+						<Label fx:id="notarName" styleClass="content" />
+						<Label fx:id="notarStreet" styleClass="content" />
+						<Label fx:id="notarCity" styleClass="content" />
+						<FlowPane  hgap="5">
+							<Hyperlink id="selectNotar" mnemonicParsing="false" onAction="#selectNotar" >
+								<tooltip>
+									<Tooltip text="Notar auswählen" />
+								</tooltip>
+								<graphic>
+									<ImageView>
+										<image>
+											<Image url="@/rsc/ic_reorder_24dp.png" />
+										</image>
+									</ImageView>
+								</graphic>
+							</Hyperlink>
+							<Hyperlink id="newNotar" mnemonicParsing="false" onAction="#newNotar" >
+								<tooltip>
+									<Tooltip text="Neuer Notar erfassen" />
+								</tooltip>
+								<graphic>
+									<ImageView>
+										<image>
+											<Image url="@/rsc/icon/person_add_24dp.png" />
+										</image>
+									</ImageView>
+								</graphic>
+							</Hyperlink>
+						</FlowPane>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+<!-- 		<HBox> -->
+<!-- 			<children> -->
+<!-- 			</children> -->
+<!-- 		</HBox> -->
+		<Group>
+			<children>
+				<GridPane hgap="0" vgap="3">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="300.0" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="240.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Label text="Finanzen" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="formheader" />
+						<Label text="Notartermin" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="formheader" />
+					</children>
+				</GridPane>
+			</children>
+		</Group>
+		<HBox>
+			<children>
+				<Group>
+					<children>
+						<GridPane hgap="0" vgap="3">
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="20.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="20.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="27.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="Kundenpreis:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+								<Label fx:id="ostCustomerPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" alignment="BASELINE_RIGHT">
+									<padding>
+										<Insets bottom="0.0" left="0.0" right="8.0" top="0.0" />
+									</padding>
+								</Label>
+								<Label text="Schätzpreis:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+								<Label fx:id="ostEstimatedPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content">
+									<padding>
+										<Insets bottom="0.0" left="0.0" right="8.0" top="0.0" />
+									</padding>
+								</Label>
+								<Label text="Verkaufspreis:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+								<PriceField fx:id="ostSettlementPrice" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content" alignment="BASELINE_RIGHT" fieldName="Verkaufspreis" />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+
+				<Group>
+					<children>
+						<GridPane>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="240.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="10.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<DateTimePicker fx:id="notarAppointment" GridPane.columnIndex="0" GridPane.rowIndex="2" fieldName="NotarTermin"  />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+			</children>
+		</HBox>
+	</children>
+</VBox>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import net.immocrm.gui.ImageViewPane?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.MainController">
+	<top>
+		<MenuBar>
+			<menus>
+				<Menu mnemonicParsing="false" text="Datei">
+					<items>
+						<fx:include source="transfer/Export.fxml" />
+						<SeparatorMenuItem />
+						<fx:include source="tools/PrintMenuItem.fxml" />
+						<SeparatorMenuItem />
+						<fx:include source="tools/ProgramExitMenuItem.fxml" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Ansicht">
+					<items>
+						<fx:include source="skin/SkinMenu.fxml" />
+					
+						<SeparatorMenuItem />
+						<MenuItem mnemonicParsing="false" onAction="#openPersonTableTab" text="Personen" accelerator="Alt+Shift+P">
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/group_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#openImmobilieTableTab" text="Immobilien" accelerator="Alt+Shift+I">
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/house2_18.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#openOrderTableTab" text="Aufträge" accelerator="Alt+Shift+A" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/order_18.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#openNotare" text="Notare" accelerator="Alt+Shift+N" />
+						<MenuItem mnemonicParsing="false" onAction="#openCalendar" text="Kalender" accelerator="Alt+Shift+K" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_schedule_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#openTerminList" text="Terminliste" accelerator="Alt+Shift+T" >
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#openUmsaetze" text="Umsätze" accelerator="Alt+Shift+U" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_euro_symbol_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<SeparatorMenuItem />
+						<MenuItem mnemonicParsing="false" onAction="#closeAllTabs" text="Alle schließen" accelerator="Ctrl+Shift+W" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_clear_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<SeparatorMenuItem />
+						<fx:include source="refresh/refreshMenuItem.fxml" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Erfassen">
+					<items>
+						<fx:include source="person/NewPersonMenu.fxml" />
+						<fx:include source="property/NewImmobilieMenu.fxml" />
+						<fx:include source="order/NewSaleOrderMenuItem.fxml" />
+						<fx:include source="order/NewRentOrderMenuItem.fxml" />
+						<fx:include source="notar/NewNotarMenuItem.fxml" />
+						<SeparatorMenuItem />
+						<MenuItem mnemonicParsing="false" onAction="#importPersons" text="Personen importieren..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/input_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem mnemonicParsing="false" onAction="#importAddresses" text="Adressen importieren..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/input_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Extras">
+					<items>
+						<fx:include source="quality/MerkmalTypeMenuItem.fxml" />
+						<fx:include source="pref/EinstellungenMenuItem.fxml" />
+					</items>
+				</Menu>
+				<fx:include source="help/HelpMenu.fxml" />
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<SplitPane fx:id="splitPane" dividerPositions="0.5" BorderPane.alignment="CENTER">
+			<items>
+				<fx:include source="overview/OverviewTreeView.fxml" />
+				<BorderPane  prefWidth="900">
+					<top>
+						<ToolBar>
+							<items>
+								<Hyperlink mnemonicParsing="false" onAction="#openPersonTableTab" >
+									<tooltip>
+										<Tooltip text="Personentabelle öffnen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/group_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#openImmobilieTableTab" >
+									<tooltip>
+										<Tooltip text="Immobilientabelle öffnen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/house2_24.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#openOrderTableTab" >
+									<tooltip>
+										<Tooltip text="Auftragstabelle öffnen"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/order_24.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#openCalendar" >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/ic_schedule_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Hyperlink mnemonicParsing="false" onAction="#openUmsaetze" >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/ic_euro_symbol_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Separator />
+								<Hyperlink mnemonicParsing="false" onAction="#closeAllTabs"  >
+									<tooltip>
+										<Tooltip text="Alle Registerkarten schließen" />
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/ic_clear_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+								<Separator />
+								<fx:include source="person/NewPersonHyperlink.fxml" />
+								<fx:include source="property/NewImmobilieHyperlink.fxml" />
+								<fx:include source="order/NewOrderHyperlink.fxml" />
+							</items>
+						</ToolBar>
+					</top>
+					<center>
+						<StackPane >
+							<children>
+								<ImageViewPane>
+									<imageView>
+										<ImageView fx:id="backgroundImageView" opacity="0.6" preserveRatio="true" >
+										    <image >
+										        <Image url="@/rsc/images/haeuser.png"/>
+										    </image>
+										</ImageView>
+									</imageView>
+								</ImageViewPane>
+								<TabPane id="mainTabPane" fx:id="mainTabPane" tabClosingPolicy="ALL_TABS" styleClass="floating" >
+									<tabs>
+									</tabs>
+									<contextMenu>
+										<ContextMenu >
+											<items>
+												<MenuItem mnemonicParsing="false" onAction="#closeSelectedTab" text="Schließen" accelerator="Ctrl+W" >
+												</MenuItem>
+												<MenuItem mnemonicParsing="false" onAction="#closeOtherTabs" text="Alle anderen schließen" accelerator="Ctrl+Alt+W" >
+												</MenuItem>
+												<SeparatorMenuItem />
+												<MenuItem mnemonicParsing="false" onAction="#closeAllTabs" text="Alle schließen" accelerator="Ctrl+Shift+W" >
+													<graphic>
+														<ImageView>
+														    <image>
+														        <Image url="@/rsc/icon/ic_clear_18pt.png"/>
+														    </image>
+														</ImageView>
+													</graphic>
+												</MenuItem>
+											</items>
+										</ContextMenu>
+									</contextMenu>
+								</TabPane>
+							</children>
+						</StackPane>
+					</center>
+				</BorderPane>
+			</items>
+		</SplitPane>
+	</center>
+	<bottom>
+		<fx:include source="refresh/DomainFilterBar.fxml" />
+	</bottom>
+</BorderPane>
+

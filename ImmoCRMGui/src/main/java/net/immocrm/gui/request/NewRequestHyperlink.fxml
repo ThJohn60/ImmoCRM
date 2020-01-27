@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.request.RequestController"
+		 mnemonicParsing="false" onAction="#newRequest" >
+	<tooltip>
+		<Tooltip text="Eine neue Anfrage eingeben"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/add_request_24dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

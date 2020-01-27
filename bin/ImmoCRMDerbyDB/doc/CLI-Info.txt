@@ -1,0 +1,9 @@
+java -jar %DERBY_HOME%/lib/derbyrun.jar ij
+
+CONNECT 'jdbc:derby:E:/Software/workspace/ImmoCRMDerbyDB/db/ImmoDB;create=true';
+CONNECT 'jdbc:derby:E:/Software/workspace/ImmoCRMDerbyDB/db/ImmoDB';
+
+CONNECT 'jdbc:derby:ImmoDB;create=true';
+
+
+CONNECT 'jdbc:derby:E:/Software/ImmoSmart/ImmoCRMDerbyDB/db/ImmoDB';

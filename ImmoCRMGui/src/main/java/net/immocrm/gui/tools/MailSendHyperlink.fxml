@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.tools.MailSendController"
+		 mnemonicParsing="false" onAction="#sendMail" >
+	<tooltip>
+		<Tooltip text="Mail an die ausgewählte Person verfassen"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_mail_outline_24dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

@@ -1,0 +1,14 @@
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<MenuItem xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.request.RequestController"
+		mnemonicParsing="false" onAction="#newRequest" text="Neue Anfrage..."  >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/add_request_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>

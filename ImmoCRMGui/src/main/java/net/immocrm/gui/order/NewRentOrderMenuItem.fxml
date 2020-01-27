@@ -1,0 +1,15 @@
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<MenuItem fx:id="newRentOrder"  xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.NewOrderController"
+		mnemonicParsing="false" onAction="#newRentOrder" text="Neue Vermietung..."  >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/note_add_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>
+

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<Tab xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.OrderController" 
+			id="orderTab" text="Aufträge" >
+	<content>
+		<BorderPane fx:id="tablePane">
+			<BorderPane.margin>
+				<Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+			</BorderPane.margin>
+			<top>
+				<ToolBar>
+					<items>
+						<fx:include source="NewOrderHyperlink.fxml" />
+						<fx:include source="../request/NewRequestHyperlink.fxml" />
+						<fx:include source="../tools/EditItemHyperlink.fxml" />
+						<fx:include source="../tools/GotoItemHyperlink.fxml" />
+						<fx:include source="../geo/MapHyperlink.fxml" />
+					</items>
+				</ToolBar>
+			</top>
+			<center>
+				<TableView fx:id="tableView" onKeyReleased="#keyPressedOnTableItem" onMouseClicked="#mouseClickOnTableItem" prefHeight="498.0"
+					prefWidth="974.0">
+					<columns>
+						<TableColumn prefWidth="90.0" text="Auftragsart">
+							<cellValueFactory>
+								<PropertyValueFactory property="orderType" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="160.0" text="Immobilie">
+							<cellValueFactory>
+								<PropertyValueFactory property="propertyType" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="300.0" text="Adresse">
+							<cellValueFactory>
+								<PropertyValueFactory property="address" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="150.0" text="Auftraggeber">
+							<cellValueFactory>
+								<PropertyValueFactory property="name" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn id="rightAlignmentColumn" prefWidth="100.0" text="Preis/Miete">
+							<cellValueFactory>
+								<PropertyValueFactory property="price" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn id="rightAlignmentColumn" prefWidth="100.0" text="Provision">
+							<cellValueFactory>
+								<PropertyValueFactory property="honorar" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="150.0" text="Käufer/Mieter">
+							<cellValueFactory>
+								<PropertyValueFactory property="purchaser" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="130.0" text="Status">
+							<cellValueFactory>
+								<PropertyValueFactory property="state" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn id="rightAlignmentColumn" prefWidth="80.0" text="Anzahl Anfragen" >
+							<cellValueFactory>
+								<PropertyValueFactory property="requestCount" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="80.0" text="Letzte Aktion">
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+					<contextMenu>
+						<ContextMenu>
+							<items>
+								<fx:include source="../request/NewRequestMenuItem.fxml" />
+								<SeparatorMenuItem mnemonicParsing="false" />
+
+								<fx:include source="../tools/EditMenuItem.fxml" />
+								<MenuItem mnemonicParsing="false" onAction="#gotoOrder" text="Auftrag anzeigen"  >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/arrow_18dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#gotoImmobilie" text="Immobilie anzeigen"  >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/arrow_18dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<SeparatorMenuItem mnemonicParsing="false" />
+
+								<fx:include source="../tools/CopyMenuItem.fxml" />
+								<fx:include source="../tools/CopyAddressMenuItem.fxml" />
+								<SeparatorMenuItem mnemonicParsing="false" />
+
+								<fx:include source="../tools/DeleteMenuItem.fxml" />
+							</items>
+						</ContextMenu>
+					</contextMenu>
+				</TableView>
+			</center>
+		</BorderPane>
+	</content>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/order_18.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Tab>
+
+

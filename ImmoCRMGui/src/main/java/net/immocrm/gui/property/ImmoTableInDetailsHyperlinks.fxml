@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<FlowPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.ImmobilieTableInDetailsMenuController" >
+	<children>
+		<Hyperlink fx:id="newImmobilieLink" mnemonicParsing="false" prefHeight="40.0" onAction="#newImmobilie" >
+			<tooltip>
+				<Tooltip text="Eine neue Immobilie eingeben"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/baseline_add_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+		<Hyperlink mnemonicParsing="false" prefHeight="40.0" onAction="#editImmobilie" >
+			<tooltip>
+				<Tooltip text="Immobilie bearbeiten"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/edit_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+		<Hyperlink mnemonicParsing="false" prefHeight="40.0" onAction="#gotoImmobilie" >
+			<tooltip>
+				<Tooltip text="Immobilie anzeigen"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/arrow_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+	</children>
+</FlowPane>

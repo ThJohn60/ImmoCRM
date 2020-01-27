@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import net.immocrm.gui.control.EnergieausweisComboBox?>
+<?import net.immocrm.gui.control.MerkmalTypeComboBox?>
+<?import net.immocrm.gui.control.PriceField?>
+<?import net.immocrm.gui.control.AreaField?>
+<?import net.immocrm.gui.control.YearField?>
+<?import net.immocrm.gui.control.VerbrauchskennwertField?>
+<?import net.immocrm.gui.control.NumberField?>
+
+<Tab text="Eigenschaften" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.EigenschaftenController" styleClass="dlg-content" >
+	<content>
+		<BorderPane >
+			<padding>
+				<Insets bottom="0.0" left="8.0" right="8.0" top="0.0" />
+			</padding>
+			<top>
+				<VBox >
+					<children>
+						<Label text="Eigenschaften" styleClass="formheadertop" />
+						<Group>
+							<children>
+								<GridPane hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label text="Zustand:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl"  />
+										<MerkmalTypeComboBox fx:id="zustand" GridPane.columnIndex="1" GridPane.rowIndex="0"  />
+										<Label text="Mietpreis:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="lbl" />
+										<PriceField fx:id="mietpreis" GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="BASELINE_RIGHT" fieldName="Mietpreis" />
+										<Label text="Hausgeld:" GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="lbl" />
+										<PriceField fx:id="hausgeld" GridPane.columnIndex="5" GridPane.rowIndex="0" alignment="BASELINE_RIGHT" fieldName="Hausgeld" />
+										
+										<Label text="Baujahr:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+										<YearField fx:id="baujahr" GridPane.columnIndex="1" GridPane.rowIndex="1" fieldName="Baujahr" />
+										<Label text="Nutzfläche:" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="lbl" />
+										<AreaField fx:id="nutzflaeche" GridPane.columnIndex="3" GridPane.rowIndex="1" alignment="BASELINE_RIGHT" fieldName="Nutzfläche" />
+										<Label text="Grundstück:" GridPane.columnIndex="4" GridPane.rowIndex="1" styleClass="lbl" />
+										<AreaField fx:id="grundstueck" GridPane.columnIndex="5" GridPane.rowIndex="1" alignment="BASELINE_RIGHT" fieldName="Grundstück" />
+				
+										<Label text="Anz. Balkone:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+										<NumberField fx:id="balkone" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="BASELINE_RIGHT" fieldName="Anz. Balkone" />
+										<Label text="Anz. Terrassen:" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="lbl" />
+										<NumberField fx:id="terrassen" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="BASELINE_RIGHT" fieldName="Anz. Terrassen" />
+										<Label text="Etage:" GridPane.columnIndex="4" GridPane.rowIndex="2" styleClass="lbl" />
+										<NumberField fx:id="etage" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="BASELINE_RIGHT" fieldName="Etage:" />
+									</children>
+								</GridPane>
+							</children>
+						</Group>
+						<Label text="Heizung" styleClass="formheader" />
+						<Group>
+							<children>
+								<GridPane hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" halignment="RIGHT" fillWidth="false" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label text="Energieausweistyp:" GridPane.columnIndex="0" styleClass="lbl" />
+										<EnergieausweisComboBox fx:id="energieausweistyp" GridPane.columnIndex="1" prefWidth="150.0" />
+										<Label text="Verbrauchskennwert:" GridPane.columnIndex="2" styleClass="lbl" />
+										<VerbrauchskennwertField fx:id="verbrauchskennwert" GridPane.columnIndex="3" alignment="BASELINE_RIGHT" fieldName="Energieverbrauchskennwert" />
+									</children>
+								</GridPane>
+							</children>
+						</Group>
+						<Group>
+							<children>
+								<GridPane fx:id="heizungFields" hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints vgrow="SOMETIMES" prefHeight="24.0" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</Group>
+						<Label text="Objektbeschreibung" styleClass="formheader" />
+					</children>
+				</VBox>
+			</top>
+			<center>
+				<TextArea fx:id="objektbeschreibung" promptText="Objektbeschreibung eingeben" >
+				</TextArea>
+			</center>
+		</BorderPane>
+	</content>
+</Tab>

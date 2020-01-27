@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import net.immocrm.gui.control.NumberField?>
+
+<Tab xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.termin.TerminListViewController" text="Termine">
+	<content>
+		<BorderPane>
+			<center>
+				<TableView fx:id="terminTable" onKeyReleased="#keyPressedOnTableItem" onMouseClicked="#mouseClickOnTableItem" >
+					<columns>
+						<TableColumn prefWidth="80.0" text="Datum">
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="50.0" text="Uhrzeit">
+							<cellValueFactory>
+								<PropertyValueFactory property="time" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="110.0" text="Kategorie">
+							<cellValueFactory>
+								<PropertyValueFactory property="categoryName" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="230.0" text="Ort">
+							<cellValueFactory>
+								<PropertyValueFactory property="place" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="230.0" text="Teilnehmer">
+							<cellValueFactory>
+								<PropertyValueFactory property="participants" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="500.0" text="Details">
+							<cellValueFactory>
+								<PropertyValueFactory property="details" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+					<contextMenu>
+						<ContextMenu>
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#editTermin" text="Bearbeiten" >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/edit_18dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+								<MenuItem mnemonicParsing="false" onAction="#gotoDomainObject" text="Anzeigen" >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/arrow_18dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+							</items>
+						</ContextMenu>
+					</contextMenu>
+				</TableView>
+			</center>
+			<bottom>
+				<FlowPane hgap="5.0"  >
+					<padding>
+						<Insets bottom="2.0" left="3.0" right="0.0" top="2.0" />
+					</padding>
+					<children>
+						<Label text="Anz. Tage in der Vergangenheit: "  />
+						<NumberField fx:id="dayCntField" text="100" onKeyReleased="#fetchByEnter" prefWidth="80.0" promptText="Anz. Tage" fieldName="Anz. Tage" />
+						<Hyperlink mnemonicParsing="false" onAction="#refresh" >
+							<tooltip>
+								<Tooltip text="Suche starten"/>
+							</tooltip>
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_search_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</Hyperlink>
+						<Hyperlink mnemonicParsing="false" onAction="#dayCntFieldReset"  >
+							<tooltip>
+								<Tooltip text="Suchfilter löschen"/>
+							</tooltip>
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_clear_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</Hyperlink>
+<!-- 						<CheckBox mnemonicParsing="false" onAction="#currentOnly" text="Nur aktuelle" alignment="BOTTOM_LEFT" /> -->
+					</children>
+				</FlowPane>
+			</bottom>
+		</BorderPane>
+	</content>
+</Tab>
+
+

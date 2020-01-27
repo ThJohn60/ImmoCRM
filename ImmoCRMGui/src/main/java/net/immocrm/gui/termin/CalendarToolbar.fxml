@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import net.immocrm.gui.control.MonthComboBox?>
+<?import net.immocrm.gui.control.YearField?>
+
+<ToolBar xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.termin.CalendarToolbarController" onKeyReleased="#monthKeyActions" >
+	<items>
+		<Region prefWidth="5" />
+		<Button fx:id="todayButton" text="Heute" mnemonicParsing="false" onAction="#today"  />
+		<Region prefWidth="5" />
+		<Hyperlink fx:id="monthBackward" mnemonicParsing="false" onAction="#monthBackward" >
+			<tooltip>
+				<Tooltip text="Einen Monat zurück"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/arrow_left_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+		<MonthComboBox fx:id="monthBox" onAction="#monthBoxSelected"  >
+		</MonthComboBox>
+		<Hyperlink fx:id="monthForeward" mnemonicParsing="false" onAction="#monthForeward" >
+			<tooltip>
+				<Tooltip text="Einen Monat vor"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/arrow_right_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+		<YearField fx:id="yearField" prefWidth="50" />
+		<Region prefWidth="5" />
+		<Separator />
+		<Hyperlink mnemonicParsing="false" onAction="#newTermin" >
+			<tooltip>
+				<Tooltip text="Neuer Termin erstellen"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/baseline_add_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Hyperlink>
+		<Separator />
+		<Button text="Terminliste" onAction="#gotoTerminList" >
+			<tooltip>
+				<Tooltip text="Terminliste öffnen"/>
+			</tooltip>
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/arrow_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</Button>
+	</items>
+</ToolBar>

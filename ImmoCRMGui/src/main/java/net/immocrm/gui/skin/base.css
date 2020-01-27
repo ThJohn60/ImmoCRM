@@ -1,0 +1,138 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.dlg {
+    -fx-padding: 20.0 8.0 3.0 8.0;
+}
+
+.dlg-header {
+    -fx-alignment: center;
+	-fx-font: NORMAL 20 Tahoma;	
+    -fx-label-padding: 0.0 5.0 5.0 5.0;
+	-fx-text-fill: midnightblue;
+}
+
+.dlg-content {
+    -fx-padding: 0.0 0.0 0.0 8.0;
+	-fx-background-color: radial-gradient(radius 100%, derive(-fx-base,20%), derive(-fx-base,-2%));
+}
+
+
+
+.lbl {
+    -fx-label-padding: 0.0 8.0 0.0 0.0;
+	-fx-text-fill: #666666;
+}
+
+.stepLabel {
+	-fx-font: NORMAL 12 Tahoma;	
+    -fx-label-padding: 0.0 0.0 8.0 0.0;
+	-fx-text-fill: midnightblue;
+}
+
+.notice {
+    -fx-padding: 5.0 2.0 0.0 2.0;
+}
+
+.hyperlink-in-dialog:visited {
+	-fx-font: NORMAL 12 Tahoma;	
+    -fx-padding: 2.0 8.0 0.0 0.0;
+	-fx-text-fill: teal;
+}
+
+.hyperlink-in-dialog  {
+	-fx-font: NORMAL 12 Tahoma;	
+    -fx-padding: 2.0 8.0 0.0 0.0;
+	-fx-text-fill: teal;
+}
+
+.alert-header {
+    -fx-alignment: center;
+	-fx-font: NORMAL 20 Tahoma;	
+    -fx-label-padding: 15.0 0.0 30.0 0.0;
+	-fx-text-fill: midnightblue;
+}
+
+.alert-text  {
+	-fx-font: NORMAL 13 Tahoma;	
+    -fx-label-padding: 0.0 10.0 0.0 10.0;
+	-fx-text-fill: midnightblue;
+}
+
+.tooltip {
+	-fx-font: NORMAL 12 Tahoma;	
+}
+
+.year-field {
+    -fx-alignment: bottom-left;
+	-fx-font: NORMAL 16 Tahoma;	
+    -fx-label-padding: 4.0 4.0 4.0 0.0;
+	-fx-text-fill: black;
+	-fx-font-weight:bold
+}
+
+
+.formheader {
+    -fx-alignment: bottom-left;
+	-fx-font: NORMAL 16 Tahoma;	
+    -fx-label-padding: 40.0 0.0 8.0 0.0;
+	-fx-text-fill: midnightblue;
+}
+
+.formheadertop {
+    -fx-alignment: bottom-left;
+	-fx-font: NORMAL 16 Tahoma;	
+    -fx-label-padding: 20.0 0.0 8.0 0.0;
+	-fx-text-fill: midnightblue;
+}
+
+.formheader2 {
+    -fx-alignment: bottom-left;
+	-fx-font: NORMAL 16 Tahoma;	
+	-fx-text-fill: midnightblue;
+}
+
+.detailheader {
+    -fx-alignment: bottom-left;
+	-fx-font: NORMAL 20 Tahoma;	
+    -fx-label-padding: 5.0 0.0 5.0 0.0;
+}
+
+.conclusion-header {
+    -fx-alignment: center-left;
+	-fx-font: NORMAL 14 Tahoma;	
+    -fx-label-padding: 20.0 0.0 8.0 0.0;
+	-fx-text-fill: midnightblue;
+}
+
+#rightAlignmentColumn {
+	-fx-alignment: CENTER-RIGHT;
+}
+
+.calendar-pane {
+    -fx-background-color:  white;
+    -fx-border-style: dashed;
+    -fx-border-width: .5;
+    -fx-border-color: black;
+}
+
+.weekday-header {
+    -fx-font: bold 16 Tahoma;
+    -fx-font-style: normal;
+    -fx-border-style: solid;
+    -fx-border-insets: 1;
+    -fx-border-width: .2;
+    -fx-border-color: white;
+}
+
+.day-field {
+    -fx-border-style: solid;
+    -fx-border-width: .2;
+    -fx-border-color: black;
+    -fx-backgroud-color: #C5FEC5;
+}
+
+.weekday-header .label {
+    -fx-text-fill: midnightblue;
+    -fx-alignment: center;
+}

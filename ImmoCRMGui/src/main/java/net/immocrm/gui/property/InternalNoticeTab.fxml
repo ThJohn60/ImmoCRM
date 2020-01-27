@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<Tab text="Internes" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.InternalNoticeController" >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/insert_comment_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+	<content>
+		<VBox styleClass="dlg-content" >
+		<padding>
+			<Insets bottom="0.0" left="8.0" right="8.0" top="0.0" />
+		</padding>
+		<children>
+			<Group>
+				<children>
+					<GridPane hgap="0" vgap="3">
+						<columnConstraints>
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" halignment="RIGHT" fillWidth="false" />
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="120.0" halignment="RIGHT" fillWidth="false" />
+							<ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+						</columnConstraints>
+						<rowConstraints>
+							<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+						</rowConstraints>
+						<children>
+							<Label text="Kaufdatum:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+							<TextField fx:id="purchaseDate" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+							<Label text="Kaufpreis:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="lbl" />
+							<TextField fx:id="purchasePrice" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+						</children>
+					</GridPane>
+				</children>
+			</Group>
+			<BorderPane>
+				<top>
+					<Region prefHeight="10.0" />
+				</top>
+				<center>
+					<TextArea id="notice" />
+				</center>
+			</BorderPane>
+		</children>
+		</VBox>
+	</content>
+</Tab>

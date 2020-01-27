@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.tools.GotoItemController"
+		 mnemonicParsing="false" onAction="#gotoItem" >
+	<tooltip>
+		<Tooltip text="Angewählter Datensatz anzeigen"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/arrow_24dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>

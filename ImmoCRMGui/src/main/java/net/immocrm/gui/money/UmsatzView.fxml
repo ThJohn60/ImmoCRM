@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+
+<Tab xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.money.UmsatzController" text="Umsätze">
+	<content>
+		<BorderPane>
+			<top>
+				<ToolBar >
+					<items>
+						<Button text="Als Exceldatei speichern" onAction="#saveAsExcelFile" />
+						<CheckBox fx:id="yearIncomeSwitch"  text="Jahresumsätze" onAction="#toggleIncomeType" />
+					</items>
+				</ToolBar>
+			</top>
+			<center>
+				<TableView fx:id="umsatzTable" onKeyReleased="#keyPressedOnTableItem" onMouseClicked="#mouseClickOnTableItem" >
+					<columns>
+						<TableColumn prefWidth="120.0" text="Datum">
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="80.0" text="Provision" id="rightAlignmentColumn" >
+							<cellValueFactory>
+								<PropertyValueFactory property="umsatzValue" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="480.0" text="Details">
+							<cellValueFactory>
+								<PropertyValueFactory property="details" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+					<contextMenu>
+						<ContextMenu>
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#gotoOrder" text="Anzeigen" >
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/icon/arrow_18dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</MenuItem>
+							</items>
+						</ContextMenu>
+					</contextMenu>
+				</TableView>
+			</center>
+		</BorderPane>
+	</content>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/ic_schedule_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Tab>
+
+

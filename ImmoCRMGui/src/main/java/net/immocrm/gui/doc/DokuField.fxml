@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.doc.DokuDialogController"
+	styleClass="dlg-content">
+	<top>
+	</top>
+	<center>
+		<VBox fx:id="dokuArea" >
+		</VBox>
+	</center>
+</BorderPane>

@@ -1,0 +1,17 @@
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<MenuItem fx:id="newImmobilie" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.NewImmobilieController"
+		mnemonicParsing="false"	onAction="#newImmobilie" text="Neue Immobilie..."  >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/baseline_add_18dp.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</MenuItem>
+

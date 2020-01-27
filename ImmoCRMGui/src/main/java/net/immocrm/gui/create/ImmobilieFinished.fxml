@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.create.ImmobilieFinishedController"
+	styleClass="dlg-content">
+	<center>
+		<ScrollPane id="scrollPane">
+			<content>
+				<VBox>
+					<padding>
+						<Insets bottom="0.0" left="5.0" right="0.0" top="00.0" />
+					</padding>
+					<children>
+						<Label text="Objekttyp" styleClass="conclusion-header" />
+						<HBox>
+							<children>
+								<Region prefWidth="10.0" />
+								<Label fx:id="lbPropertyType" wrapText="true" styleClass="content" />
+							</children>
+						</HBox>
+						<Label text="Eigentümer" styleClass="conclusion-header" />
+						<HBox>
+							<children>
+								<Region prefWidth="10.0" />
+								<Label fx:id="lbOwner" wrapText="true" styleClass="content" />
+							</children>
+						</HBox>
+
+						<Label text="Immobilie" styleClass="conclusion-header" />
+						<HBox>
+							<children>
+								<Region prefWidth="10.0" />
+								<Label fx:id="lbImmobilie" wrapText="true" styleClass="content" />
+							</children>
+						</HBox>
+
+						<Label text="Ausstattung" styleClass="conclusion-header" />
+						<HBox>
+							<children>
+								<Region prefWidth="10.0" />
+								<Label fx:id="lbAusstattung" wrapText="true" styleClass="content" />
+							</children>
+						</HBox>
+
+						<Label text="Bilder" styleClass="conclusion-header" />
+						<HBox>
+							<children>
+								<Region prefWidth="10.0" />
+								<Label fx:id="lbImages" wrapText="true" styleClass="content" />
+							</children>
+						</HBox>
+					</children>
+				</VBox>
+			</content>
+		</ScrollPane>
+	</center>
+</BorderPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<ContextMenu xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.ImmobilieTableInDetailsMenuController" >
+	<items>
+		<MenuItem mnemonicParsing="false" onAction="#newImmobilie" text="Neue Immobilie..." >
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/baseline_add_18dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</MenuItem>
+		<SeparatorMenuItem mnemonicParsing="false" />
+		<MenuItem mnemonicParsing="false" onAction="#editImmobilie" text="Bearbeiten..." >
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/edit_18dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</MenuItem>
+		<MenuItem mnemonicParsing="false" onAction="#gotoImmobilie" text="Anzeigen" >
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/arrow_24dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</MenuItem>
+		<SeparatorMenuItem mnemonicParsing="false" />
+		<MenuItem mnemonicParsing="false" onAction="#deleteImmobilie" text="Löschen..." >
+			<graphic>
+				<ImageView>
+				    <image>
+				        <Image url="@/rsc/icon/delete_18dp.png"/>
+				    </image>
+				</ImageView>
+			</graphic>
+		</MenuItem>
+	</items>
+</ContextMenu>
+

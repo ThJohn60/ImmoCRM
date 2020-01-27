@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<Tab text="Historie" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.order.HistoryTabController" >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/ic_history_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+	<content>
+		<BorderPane>
+			<top>
+				<Region prefHeight="10.0" />
+			</top>
+			<center>
+				<TableView fx:id="historyTable" >
+					<columns>
+						<TableColumn prefWidth="120.0" text="Datum">
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="220.0" text="Ereignis">
+							<cellValueFactory>
+								<PropertyValueFactory property="description" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="100.0" text="Vorher">
+							<cellValueFactory>
+								<PropertyValueFactory property="oldValue" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="100.0" text="Nachher">
+							<cellValueFactory>
+								<PropertyValueFactory property="newValue" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+				</TableView>
+			</center>
+		</BorderPane>
+	</content>
+</Tab>

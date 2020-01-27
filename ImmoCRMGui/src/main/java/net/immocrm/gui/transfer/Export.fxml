@@ -1,0 +1,17 @@
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+
+<Menu xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.ExportController" mnemonicParsing="false" text="Exportieren">
+	<items>
+		<MenuItem mnemonicParsing="false" onAction="#exportPersons" text="Personen..." />
+		<MenuItem mnemonicParsing="false" onAction="#exportOrders" text="Aufträge..." />
+		<MenuItem mnemonicParsing="false" onAction="#exportAppointments" text="Termine..." />
+	</items>
+</Menu>

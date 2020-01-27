@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.CheckBoxTreeItem?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.overview.OverviewTreeController"  minWidth="180">
+	<top>
+		<ToolBar>
+			<items>
+				<Hyperlink mnemonicParsing="false" onAction="#expandAll"  >
+					<tooltip>
+						<Tooltip text="Alles aufklappen"/>
+					</tooltip>
+					<graphic>
+						<ImageView>
+						    <image>
+						        <Image url="@/rsc/icon/ic_arrow_forward_24dp.png"/>
+						    </image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+				<Hyperlink mnemonicParsing="false" onAction="#collapseAll" >
+					<tooltip>
+						<Tooltip text="Alles zuklappen"/>
+					</tooltip>
+					<graphic>
+						<ImageView>
+						    <image>
+						        <Image url="@/rsc/icon/ic_arrow_back_24dp.png"/>
+						    </image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+				<Separator />
+				<Hyperlink mnemonicParsing="false" onAction="#editItem" >
+					<tooltip>
+						<Tooltip text="Datensatz bearbeiten"/>
+					</tooltip>
+					<graphic>
+						<ImageView>
+						    <image>
+						        <Image url="@/rsc/icon/edit_24dp.png"/>
+						    </image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+				<Hyperlink mnemonicParsing="false" onAction="#gotoItem" >
+					<tooltip>
+						<Tooltip text="Ausgewählter Datensatz anzeigen"/>
+					</tooltip>
+					<graphic>
+						<ImageView>
+						    <image>
+						        <Image url="@/rsc/icon/arrow_24dp.png"/>
+						    </image>
+						</ImageView>
+					</graphic>
+				</Hyperlink>
+			</items>
+		</ToolBar>
+	</top>
+	<center>
+		<TreeView fx:id="treeView" onKeyReleased="#keyPressedOnTableItem" onMouseClicked="#mouseClickOnTreeItem"
+			BorderPane.alignment="CENTER">
+			<contextMenu>
+				<ContextMenu fx:id="treeContextMenu" onShowing="#onShowingContextMenu">
+					<items>
+						<fx:include source="../property/NewImmobilieMenuWithIcon.fxml" />
+						<fx:include source="../order/NewOrderMenuItem.fxml" />
+						<MenuItem id="newRequest"  mnemonicParsing="false" onAction="#newRequest" text="Neue Anfrage..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/add_request_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false"  />
+
+						<MenuItem id="editItem" mnemonicParsing="false" onAction="#editItem" text="Bearbeiten..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/edit_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem id="addImages"  mnemonicParsing="false" onAction="#addImages" text="Bilder hinzufügen..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/add_a_photo_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+
+						<SeparatorMenuItem mnemonicParsing="false"  />
+			
+						<MenuItem id="gotoItem" mnemonicParsing="false" onAction="#gotoItem" text="Anzeigen" accelerator="Enter" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/arrow_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem id="copyToClipboard" mnemonicParsing="false" onAction="#copyToClipboard" text="Kopieren" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_content_copy_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem id="copyAddressToClipboard" mnemonicParsing="false" onAction="#copyAddressToClipboard" text="Anschrift kopieren" />
+						<MenuItem id="showInMap" mnemonicParsing="false" onAction="#showInMap" text="Auf Karte anzeigen" >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/map_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						<MenuItem id="mailToPerson" mnemonicParsing="false" onAction="#mailToPerson" text="Mail senden..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/ic_mail_outline_18pt.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+						
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem id="deleteItem" mnemonicParsing="false" onAction="#deleteItem" text="Löschen..." >
+							<graphic>
+								<ImageView>
+								    <image>
+								        <Image url="@/rsc/icon/delete_18dp.png"/>
+								    </image>
+								</ImageView>
+							</graphic>
+						</MenuItem>
+					</items> 
+				</ContextMenu>
+			</contextMenu>
+		</TreeView>
+	</center>
+</BorderPane>
+

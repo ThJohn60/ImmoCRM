@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Tab text="Ausstattung" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.AusstattungController" styleClass="dlg-content" >
+	<content>
+		<BorderPane >
+			<padding>
+				<Insets bottom="0.0" left="8.0" right="8.0" top="0.0" />
+			</padding>
+			<top>
+				<VBox >
+					<children>
+						<Label fx:id="lbBath" text="Bad" styleClass="formheadertop" />
+						<Group>
+							<children>
+								<GridPane fx:id="bathFields" hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints vgrow="SOMETIMES" prefHeight="24.0" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</Group>
+						<Label fx:id="idCar" text="KFZ-Stellplatz" styleClass="formheader" />
+						<Group>
+							<children>
+								<GridPane fx:id="carFields" hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints vgrow="SOMETIMES" prefHeight="24.0" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</Group>
+						<Label text="Sonstiges" styleClass="formheader" />
+						<Group>
+							<children>
+								<GridPane fx:id="ausstattungFields" hgap="0" vgap="3">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+										<ColumnConstraints hgrow="SOMETIMES" prefWidth="160.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints vgrow="SOMETIMES" prefHeight="24.0" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</Group>
+						<Region prefHeight="10.0" />
+						<Label text="Ausstattung" styleClass="formheader" />
+					</children>
+				</VBox>
+			</top>
+			<center>
+				<TextArea fx:id="ausstattungText" promptText="Hier weitere Ausstattungsmerkmale eingeben" >
+				</TextArea>
+			</center>
+		</BorderPane>
+	</content>
+</Tab>

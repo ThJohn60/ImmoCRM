@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<?import net.immocrm.gui.control.TerminCategoryComboBox?>
+<?import net.immocrm.gui.control.DateTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.TextFlow?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.transfer.AddressImportController" prefWidth="500" fx:id="dialogPane" styleClass="dlg" >
+	<header>
+		<Label text="Adressen importieren" id="headerLabel" styleClass="dlg-header" />
+	</header>
+	<content>
+		<VBox fillWidth="true" >
+			<children>
+				<Label text="Adressen im CSV-format (Excel) können importiert werden. Dazu müssen die Spalten die folgenden Überschriften haben:"  wrapText="true" />
+				<Label text="   * Straße"   />
+				<Label text="   * Straße2 (kann fehlen)"   />
+				<Label text="   * PLZ"   />
+				<Label text="   * Ort"   />
+				<Region prefHeight="20" />
+				<TextFlow fx:id="importantNote" />
+				<Region prefHeight="20" />
+				<Button text="Datei auswählen..." onAction="#choosedFile" />
+				<Region prefHeight="10" />
+				<FlowPane >
+					<children>
+						<Label text="Ausgewählt:" styleClass="lbl" />
+						<Label fx:id="fileName" styleClass="content" />
+					</children>
+				</FlowPane>
+				<Region prefHeight="20" />
+				<Label fx:id="successLabel" />
+			</children>
+		</VBox>
+	</content>
+</DialogPane>

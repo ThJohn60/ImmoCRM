@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import net.immocrm.gui.control.CountryComboBox?>
+
+<Tab text="Details"  xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.person.PersonFormController" >
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/person_18pt.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+	<content>
+		<VBox alignment="TOP_LEFT" styleClass="dlg-content">
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+			</padding>
+			<children>
+				<Region prefHeight="5.0" />
+				<Group>
+					<children>
+						<GridPane>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="40.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="Anrede:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="lbl" />
+								<ComboBox fx:id="anredeSelectionBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+								<Label text="Titel:" GridPane.columnIndex="3" styleClass="lbl" />
+								<TextField fx:id="titel" prefWidth="200.0" GridPane.columnIndex="4" />
+								<Label text="Vorname:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+								<TextField fx:id="vorname" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" />
+								<Label text="2. Vorname:" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="lbl" />
+								<TextField fx:id="middlename" GridPane.columnIndex="4" GridPane.rowIndex="1" styleClass="content" />
+								<Label text="Nachname:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="lbl" />
+								<TextField fx:id="nachname" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" />
+								<Label text="Geburtstag:" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="lbl" />
+								<DatePicker fx:id="birthday" GridPane.columnIndex="4" GridPane.rowIndex="2" styleClass="content" />
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+				<Group>
+					<children>
+						<GridPane>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="40.0" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="80.0" halignment="RIGHT" fillWidth="false" />
+								<ColumnConstraints hgrow="SOMETIMES" prefWidth="200.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+							</rowConstraints>
+							<children>
+								<Label text="Adresse" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="formheader" />
+								<Label text="Kontakt" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="formheader" />
+								<Label text="Straße:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="lbl" />
+								<TextField fx:id="street" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content" />
+								<TextField fx:id="streetb" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="content" />
+								<Label text="PLZ:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="lbl" />
+								<TextField fx:id="postalCode" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content" />
+								<Label text="Ort:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="lbl" />
+								<TextField fx:id="city" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="content" />
+								<Label text="Land:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="lbl" />
+								<CountryComboBox fx:id="countryBox" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="200.0"  />
+		
+								<Label text="Mobil:" GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="lbl" />
+								<TextField fx:id="mobile" GridPane.columnIndex="4" GridPane.rowIndex="1" styleClass="content" />
+								<Label text="Telefon:" GridPane.columnIndex="3" GridPane.rowIndex="2" styleClass="lbl" />
+								<TextField fx:id="telefon" GridPane.columnIndex="4" GridPane.rowIndex="2" styleClass="content" />
+								<Label text="Fax:" GridPane.columnIndex="3" GridPane.rowIndex="3" styleClass="lbl" />
+								<TextField fx:id="fax" GridPane.columnIndex="4" GridPane.rowIndex="3" styleClass="content" />
+								<Label text="E-Mail:" GridPane.columnIndex="3" GridPane.rowIndex="4" styleClass="lbl" />
+								<TextField fx:id="email" GridPane.columnIndex="4" GridPane.rowIndex="4" styleClass="content" />
+		
+								<Hyperlink mnemonicParsing="false" onAction="#selectAddress" GridPane.columnIndex="1" GridPane.rowIndex="6" >
+									<tooltip>
+										<Tooltip text="Adresse kopieren"/>
+									</tooltip>
+									<graphic>
+										<ImageView>
+										    <image>
+										        <Image url="@/rsc/ic_reorder_24dp.png"/>
+										    </image>
+										</ImageView>
+									</graphic>
+								</Hyperlink>
+							</children>
+						</GridPane>
+					</children>
+				</Group>
+			</children>
+		</VBox>
+	</content>
+</Tab>
+		

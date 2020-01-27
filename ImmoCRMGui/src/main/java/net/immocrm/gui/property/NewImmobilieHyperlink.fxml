@@ -1,0 +1,19 @@
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<Hyperlink xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.immocrm.gui.property.NewImmobilieController"
+		 mnemonicParsing="false" onAction="#newImmobilie" >
+	<tooltip>
+		<Tooltip text="Neue Immobilie anlegen"/>
+	</tooltip>
+	<graphic>
+		<ImageView>
+		    <image>
+		        <Image url="@/rsc/icon/add_house_24.png"/>
+		    </image>
+		</ImageView>
+	</graphic>
+</Hyperlink>
